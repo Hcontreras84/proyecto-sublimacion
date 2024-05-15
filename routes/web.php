@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $productos = [
+        ['nombre' => 'producto 1 posillo estampado', 'precio' => 15000],
+        ['nombre' => 'producto 2 llaveros personalizados','precio' => 10000],
+        ['nombre' => 'producto 3 camisetas estampadas','precio' => 25000],
+        ['nombre' => 'producto 4 almohadas con logos', 'precio'=> 35000],
+        ['nombre' => 'producto 5 gorras con estampado', 'precio'=> 30000],
+    ];
+    $nombre= "HECTOR CONTRERAS RUIZ";
+    return view('welcome', ['productos' => $productos], ['nombre' => $nombre]);
 });
+
+//Route::view('/contacto', 'contacto');
